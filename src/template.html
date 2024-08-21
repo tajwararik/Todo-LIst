@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <section class="sidebar">
+      <header>
+        <img src="../images/icons8-todo-list-64.png" alt="logo" />
+        <h1>Todo List</h1>
+      </header>
+
+      <div class="project-container">
+        <p class="view-projects">Project</p>
+        <p id="add-project">&plus;</p>
+
+        <dialog>
+          <form action="#">
+            <h3>Create a new project</h3>
+            <label for="name"
+              >Name: <input type="text" name="name" id="name" autofocus
+            /></label>
+            <div class="buttons">
+              <button class="cancel">Cancel</button>
+              <button class="add">Add</button>
+            </div>
+          </form>
+        </dialog>
+      </div>
+
+      <div class="task-container">
+        <p class="view-tasks">Task</p>
+        <p class="add-task">&plus;</p>
+        <dialog></dialog>
+      </div>
+    </section>
+
+    <section class="container">
+      <div>
+        <h1>Display</h1>
+      </div>
+    </section>
+  </body>
+</html>
