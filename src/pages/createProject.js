@@ -1,35 +1,26 @@
+import { format } from "date-fns";
+
 const projectContainer = document.querySelector(".project-container");
-const addProject = projectContainer.querySelector("#add-project");
 const projectDialog = projectContainer.querySelector("dialog");
 const form = projectDialog.querySelector("form");
-const cancelButton = projectDialog.querySelector(".cancel");
-const addButton = projectDialog.querySelector(".add");
 
-addProject.addEventListener("click", () => {
-  projectDialog.showModal();
-});
-
-cancelButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  projectDialog.close();
-});
+export const projectArray = [];
 
 class Project {
-  constructor(name) {
+  constructor(name, date) {
     this.name = name;
+    this.date = date;
   }
 }
 
 export function createProject() {
   const projectName = form.querySelector("#name").value;
 
-  const newProject = new Project(projectName);
-  console.log(projectName);
-}
+  const projectDate = format(new Date(), "dd MMM yyyy");
 
-addButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  createProject();
+  const newProject = new Project(projectName, projectDate);
+
+  projectArray.push(newProject);
+
   form.reset();
-  projectDialog.close();
-});
+}
