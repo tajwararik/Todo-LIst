@@ -20,7 +20,10 @@ export function createProject() {
 
   const newProject = new Project(projectName, projectDate);
 
-  projectArray.push(newProject);
+  if (projectName !== "") {
+    projectArray.push(newProject);
+    projectDialog.close();
+  }
 
   form.reset();
 }
