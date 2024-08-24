@@ -22,14 +22,15 @@ body {
   grid-template-columns: 1fr 4fr;
   user-select: none;
   position: relative;
+  overflow-x: hidden;
 }
 
 .sidebar {
-  height: 100vh;
+  min-height: 100vh;
   border-right: 2px solid #000;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 100px;
 }
 
 .sidebar > header {
@@ -72,20 +73,6 @@ body {
   border-radius: 50%;
   padding: 0 5px;
   background-color: #fff;
-}
-
-.container div:first-of-type {
-  height: 70px;
-  background-color: #ddd;
-  box-shadow: 0px 0px 10px 3px rgba(177, 193, 204, 0.2);
-}
-
-.container div > h1 {
-  font-family: var(--Jersey-10);
-  font-size: 3rem;
-  letter-spacing: 3px;
-  text-align: center;
-  padding: 10px;
 }
 
 dialog {
@@ -132,4 +119,22 @@ form > div button {
   padding: 6px 8px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.container div:first-of-type {
+  height: 70px;
+  background-color: #ddd;
+  box-shadow: 0px 0px 10px 3px rgba(177, 193, 204, 0.2);
+}
+
+.container div > h1 {
+  font-family: var(--Jersey-10);
+  font-size: 3rem;
+  letter-spacing: 3px;
+  text-align: center;
+  padding: 10px;
+}
+
+.container div:last-of-type {
+  min-height: 100vh;
 }
