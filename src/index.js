@@ -18,7 +18,7 @@ const addProjectButton = projectDialog.querySelector(
 const taskContainer = document.querySelector(".task-container");
 const addTask = taskContainer.querySelector("#add-task");
 const taskDialog = taskContainer.querySelector(".task-container > dialog");
-const cancelTaskButton = projectDialog.querySelector(
+const cancelTaskButton = taskDialog.querySelector(
   ".task-container > dialog .cancel"
 );
 const addTaskButton = projectDialog.querySelector(
@@ -42,4 +42,13 @@ addProjectButton.addEventListener("click", (e) => {
 
 viewProjects.addEventListener("click", () => {
   loadDomProjectHandle();
+});
+
+addTask.addEventListener("click", () => {
+  taskDialog.showModal();
+});
+
+cancelTaskButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  taskDialog.close();
 });
