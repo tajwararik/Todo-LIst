@@ -75,21 +75,27 @@ body {
   background-color: #fff;
 }
 
-.project-container > dialog {
+.project-container > dialog,
+.task-container > dialog {
   width: 100%;
   max-width: 300px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(calc(-50% + 100px), calc(-50% - 35px));
   border-radius: 16px;
+}
+
+.task-container > dialog {
+  max-width: 450px;
 }
 
 dialog::backdrop {
   background-color: hsla(0, 0%, 0%, 0.7);
 }
 
-.project-container form {
+.project-container form,
+.task-container form {
   font-size: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -98,21 +104,40 @@ dialog::backdrop {
   padding: 20px;
 }
 
-.project-container form input {
+.task-container form {
+  gap: 20px;
+}
+
+.project-container form input,
+.task-container form input {
   height: 25px;
   font-size: 0.85rem;
   padding-left: 2px;
   border-radius: 5px;
 }
 
-.project-container form > div {
+.task-container form textarea {
+  width: 100%;
+  font-size: 0.85rem;
+  padding-left: 2px;
+  border-radius: 5px;
+  resize: none;
+}
+
+.project-container form > div,
+.task-container form > div {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.project-container form > div > button {
+.task-container form > div:first-of-type input {
+  vertical-align: middle;
+}
+
+.project-container form > div > button,
+.task-container form > div > button {
   font-size: 0.85rem;
   display: block;
   background-color: #ddd;
@@ -123,7 +148,7 @@ dialog::backdrop {
 
 .display-container > div:first-of-type {
   height: 70px;
-  background-color: #9C34C2;
+  background-color: #9c34c2;
   border-bottom: 2px solid #000;
   margin-bottom: 50px;
 }
@@ -153,7 +178,7 @@ dialog::backdrop {
 
 .project-card > h2 {
   font-size: 1.5rem;
-  color: #9C34C2;
+  color: #9c34c2;
   cursor: pointer;
 }
 
