@@ -62,20 +62,20 @@ body {
   border-radius: 5px;
 }
 
-.sidebar div p {
+.sidebar > div > p {
   font-size: 1.5rem;
   cursor: pointer;
   vertical-align: middle;
 }
 
-.sidebar div p:last-of-type {
+.sidebar > div > p:last-of-type {
   border: 1px solid #000;
   border-radius: 50%;
   padding: 0 5px;
   background-color: #fff;
 }
 
-dialog {
+.project-container > dialog {
   width: 100%;
   max-width: 300px;
   position: absolute;
@@ -89,7 +89,7 @@ dialog::backdrop {
   background-color: hsla(0, 0%, 0%, 0.7);
 }
 
-form {
+.project-container form {
   font-size: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -98,21 +98,21 @@ form {
   padding: 20px;
 }
 
-form input {
+.project-container form input {
   height: 25px;
   font-size: 0.85rem;
   padding-left: 2px;
   border-radius: 5px;
 }
 
-form > div {
+.project-container form > div {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-form > div button {
+.project-container form > div > button {
   font-size: 0.85rem;
   display: block;
   background-color: #ddd;
@@ -121,14 +121,14 @@ form > div button {
   cursor: pointer;
 }
 
-.container > div:first-of-type {
+.display-container > div:first-of-type {
   height: 70px;
   background-color: #9C34C2;
   border-bottom: 2px solid #000;
   margin-bottom: 50px;
 }
 
-.container div > h1 {
+.display-container div > h1 {
   font-family: var(--Jersey-10);
   font-size: 3rem;
   letter-spacing: 3px;
@@ -137,7 +137,7 @@ form > div button {
   padding: 10px;
 }
 
-.container > div:last-of-type {
+.display-container > div:last-of-type {
   min-height: 100vh;
 }
 
