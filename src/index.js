@@ -4,21 +4,37 @@ import "./styles.css";
 
 const projectContainer = document.querySelector(".project-container");
 const addProject = projectContainer.querySelector("#add-project");
-const viewProjects = projectContainer.querySelector(".view-projects");
-const projectDialog = projectContainer.querySelector(".project-container > dialog");
-const cancelButton = projectDialog.querySelector(".cancel");
-const addButton = projectDialog.querySelector(".add");
+const viewProjects = projectContainer.querySelector("#view-projects");
+const projectDialog = projectContainer.querySelector(
+  ".project-container > dialog"
+);
+const cancelProjectButton = projectDialog.querySelector(
+  ".project-container > dialog .cancel"
+);
+const addProjectButton = projectDialog.querySelector(
+  ".project-container > dialog .add"
+);
+
+const taskContainer = document.querySelector(".task-container");
+const addTask = taskContainer.querySelector("#add-task");
+const taskDialog = taskContainer.querySelector(".task-container > dialog");
+const cancelTaskButton = projectDialog.querySelector(
+  ".task-container > dialog .cancel"
+);
+const addTaskButton = projectDialog.querySelector(
+  ".task-container > dialog .add"
+);
 
 addProject.addEventListener("click", () => {
   projectDialog.showModal();
 });
 
-cancelButton.addEventListener("click", (e) => {
+cancelProjectButton.addEventListener("click", (e) => {
   e.preventDefault();
   projectDialog.close();
 });
 
-addButton.addEventListener("click", (e) => {
+addProjectButton.addEventListener("click", (e) => {
   e.preventDefault();
   createProject();
   loadDomProjectHandle();
