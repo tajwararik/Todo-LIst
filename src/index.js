@@ -5,7 +5,7 @@ import "./styles.css";
 const projectContainer = document.querySelector(".project-container");
 const addProject = projectContainer.querySelector("#add-project");
 const viewProjects = projectContainer.querySelector(".view-projects");
-const projectDialog = projectContainer.querySelector("dialog");
+const projectDialog = projectContainer.querySelector(".project-container > dialog");
 const cancelButton = projectDialog.querySelector(".cancel");
 const addButton = projectDialog.querySelector(".add");
 
