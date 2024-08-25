@@ -1,7 +1,7 @@
 import { projectArray } from "./createProject";
 
 export const loadDomProjectHandle = function () {
-  const display = document.querySelector(".container > div:last-of-type");
+  const display = document.querySelector(".display-container > div:last-of-type");
   display.innerHTML = "";
 
   for (let project of projectArray) {
