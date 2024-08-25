@@ -20,9 +20,10 @@
           <form action="#">
             <h3>Create a new project</h3>
             <label for="name"
-              >Name: <input type="text" name="name" id="name" autofocus
+              >Name: <input type="text" name="name" id="name" placeholder="Project name" autofocus
             /></label>
-            <div class="buttons">
+
+            <div>
               <button class="cancel">Cancel</button>
               <button class="add">Add</button>
             </div>
@@ -33,11 +34,48 @@
       <div class="task-container">
         <p class="view-tasks">&vrtri; Task</p>
         <p class="add-task">&plus;</p>
-        <dialog></dialog>
+
+        <dialog>
+          <form action="#">
+            <h3>Create a new task</h3>
+            <label for="title">
+              Title: <input type="text" name="title" id="title" placeholder="Task name" autofocus />
+            </label>
+            <label for="description"
+              >Description:
+              <textarea
+                name="description"
+                id="description"
+                rows="10"
+                cols="30"
+                placeholder="Write description"
+              ></textarea>
+            </label>
+            <label for="due-date">Due Date: <input type="date" /></label>
+
+            <div>
+              <p>Priority:</p>
+              <label for="high"
+                ><input type="radio" name="priority" id="high" /> High</label
+              >
+              <label for="medium"
+                ><input type="radio" name="priority" id="medium" /> Medium
+              </label>
+              <label for="low"
+                ><input type="radio" name="priority" id="low" /> Low</label
+              >
+            </div>
+
+            <div>
+              <button class="cancel">Cancel</button>
+              <button class="add">Add</button>
+            </div>
+          </form>
+        </dialog>
       </div>
     </section>
 
-    <section class="container">
+    <section class="display-container">
       <div>
         <h1>Display</h1>
       </div>
