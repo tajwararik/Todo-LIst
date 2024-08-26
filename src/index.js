@@ -1,29 +1,20 @@
 import { createProject } from "./pages/createProject.js";
+import { createTask } from "./pages/createTask.js";
 import { loadDomProjectHandle } from "./pages/domProjectHandle.js";
 import "./styles.css";
 
 const projectContainer = document.querySelector(".project-container");
 const addProject = projectContainer.querySelector("#add-project");
 const viewProjects = projectContainer.querySelector("#view-projects");
-const projectDialog = projectContainer.querySelector(
-  ".project-container > dialog"
-);
-const cancelProjectButton = projectDialog.querySelector(
-  ".project-container > dialog .cancel"
-);
-const addProjectButton = projectDialog.querySelector(
-  ".project-container > dialog .add"
-);
+const projectDialog = projectContainer.querySelector("dialog");
+const cancelProjectButton = projectDialog.querySelector(".cancel");
+const addProjectButton = projectDialog.querySelector(".add");
 
 const taskContainer = document.querySelector(".task-container");
 const addTask = taskContainer.querySelector("#add-task");
-const taskDialog = taskContainer.querySelector(".task-container > dialog");
-const cancelTaskButton = taskDialog.querySelector(
-  ".task-container > dialog .cancel"
-);
-const addTaskButton = projectDialog.querySelector(
-  ".task-container > dialog .add"
-);
+const taskDialog = taskContainer.querySelector("dialog");
+const cancelTaskButton = taskDialog.querySelector(".cancel");
+const addTaskButton = taskDialog.querySelector(".add");
 
 addProject.addEventListener("click", () => {
   projectDialog.showModal();
@@ -51,4 +42,9 @@ addTask.addEventListener("click", () => {
 cancelTaskButton.addEventListener("click", (e) => {
   e.preventDefault();
   taskDialog.close();
+});
+
+addTaskButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  createTask();
 });
