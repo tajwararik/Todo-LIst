@@ -166,24 +166,3 @@ dialog::backdrop {
   min-height: 100vh;
 }
 
-.project-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px solid #000;
-  border-radius: 40px;
-  padding: 10px 20px;
-  margin: 25px;
-}
-
-.project-card > h2 {
-  font-size: 1.5rem;
-  color: #9c34c2;
-  cursor: pointer;
-}
-
-.project-card > p {
-  font: 1rem;
-  font-style: italic;
-  font-weight: 300;
-}
