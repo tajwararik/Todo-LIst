@@ -1,4 +1,5 @@
 import { projectArray } from "./createProject";
+import "./projectCards.css";
 
 export const loadDomProjectHandle = function () {
   const display = document.querySelector(".display-container > div:last-of-type");
