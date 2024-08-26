@@ -2,6 +2,8 @@ const taskContainer = document.querySelector(".task-container");
 const taskDialog = taskContainer.querySelector("dialog");
 const form = taskDialog.querySelector("form");
 
+export const taskArray = [];
+
 class Task {
   constructor(title, description, dueDate, priority) {
     this.title = title;
@@ -33,8 +35,10 @@ export function createTask() {
     taskDescription !== "" &&
     taskDueDate !== "" &&
     taskPriority !== ""
-  )
+  ) {
+    taskArray.push(newTask);
     taskDialog.close();
+  }
 
   form.reset();
 }
