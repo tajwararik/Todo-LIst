@@ -1,6 +1,7 @@
 import { createProject } from "./pages/createProject.js";
 import { createTask } from "./pages/createTask.js";
 import { loadDomProjectHandle } from "./pages/domProjectHandle.js";
+import { loadDomTaskHandle } from "./pages/domTaskHandle.js";
 import "./styles.css";
 
 const projectContainer = document.querySelector(".project-container");
@@ -47,4 +48,5 @@ cancelTaskButton.addEventListener("click", (e) => {
 addTaskButton.addEventListener("click", (e) => {
   e.preventDefault();
   createTask();
+  loadDomTaskHandle();
 });
