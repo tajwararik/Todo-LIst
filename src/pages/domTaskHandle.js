@@ -12,9 +12,9 @@ export const loadDomTaskHandle = function () {
     taskCard.classList.add("task-card");
 
     taskCard.innerHTML = `<h3>${task.title}</h3>
-    <p>Description: ${task.description}</p>
-    <p>Due: ${task.dueDate}</p>
-    <p>Priority: ${task.priority}`;
+    <p><strong>Description:</strong> ${task.description}</p>
+    <p><strong>Due:</strong> ${task.dueDate}</p>
+    <p><strong>Priority:</strong> ${task.priority}`;
 
     display.append(taskCard);
   }
