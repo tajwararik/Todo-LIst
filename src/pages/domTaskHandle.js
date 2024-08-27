@@ -7,6 +7,9 @@ export const loadDomTaskHandle = function () {
   );
   display.innerHTML = "";
 
+  const taskCardsHolder = document.createElement("div");
+  taskCardsHolder.classList.add("task-cards-holder");
+
   for (let task of taskArray) {
     const taskCard = document.createElement("div");
     taskCard.classList.add("task-card");
@@ -16,6 +19,7 @@ export const loadDomTaskHandle = function () {
     <p><strong>Due:</strong> ${task.dueDate}</p>
     <p><strong>Priority:</strong> ${task.priority}`;
 
-    display.append(taskCard);
+    taskCardsHolder.append(taskCard);
+    display.append(taskCardsHolder);
   }
 };
