@@ -4,7 +4,12 @@ const projectContainer = document.querySelector(".project-container");
 const projectDialog = projectContainer.querySelector("dialog");
 const form = projectDialog.querySelector("form");
 
-export const projectArray = [];
+export const projectArray = [
+  {
+    name: "General",
+    date: "Default",
+  },
+];
 
 class Project {
   constructor(name, date) {
