@@ -124,6 +124,34 @@ dialog::backdrop {
   resize: none;
 }
 
+.task-container form input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.task-container form input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: #9c34c2;
+  padding: 5px;
+  border-color: #9c34c2;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.task-container form input[type="date"]:hover {
+  box-shadow: 0 0 5px rgba(136, 38, 131, 0.459);
+  outline: none;
+}
+
 .project-container form > div,
 .task-container form > div {
   width: 100%;
@@ -165,4 +193,3 @@ dialog::backdrop {
 .display-container > div:last-of-type {
   min-height: 100vh;
 }
-
