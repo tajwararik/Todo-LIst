@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 const taskContainer = document.querySelector(".task-container");
 const taskDialog = taskContainer.querySelector("dialog");
 const form = taskDialog.querySelector("form");
@@ -16,7 +18,10 @@ class Task {
 export function createTask() {
   const taskTitle = form.querySelector("#title").value;
   const taskDescription = form.querySelector("#description").value;
-  const taskDueDate = form.querySelector("#due-date").value;
+  const taskDueDate = format(
+    form.querySelector("#due-date").value,
+    "dd MMM yyyy"
+  );
   let taskPriority = "";
 
   form.querySelectorAll("div input[type='radio']").forEach((radio) => {
