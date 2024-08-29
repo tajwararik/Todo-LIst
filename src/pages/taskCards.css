@@ -21,3 +21,11 @@
 .task-card h3 {
   text-align: center;
 }
+
+.task-card strong {
+  color: #9c34c2;
+}
+
+.task-card span {
+  font-weight: 800;
+}
