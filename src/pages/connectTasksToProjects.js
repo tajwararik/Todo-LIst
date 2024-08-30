@@ -5,7 +5,7 @@ export const dropDown = document.querySelector("#select-project");
 export const connectTasksToProject = function () {
   dropDown.innerHTML = "";
 
-  dropDown.innerHTML = `<option disabled selected>Projects</option>`;
+  dropDown.innerHTML = `<option disabled selected>Project</option>`;
 
   projectArray.forEach((project) => {
     const option = document.createElement("option");
