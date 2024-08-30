@@ -43,6 +43,7 @@ export function createTask() {
     taskTitle !== "" &&
     taskDescription !== "" &&
     taskDueDate !== "" &&
+    project !== "Project" &&
     taskPriority !== ""
   ) {
     taskArray.push(newTask);
