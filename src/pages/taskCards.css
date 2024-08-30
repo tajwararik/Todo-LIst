@@ -9,7 +9,7 @@
   height: 300px;
   display: inline-block;
   font-size: 1.25rem;
-  line-height: 2;
+  line-height: 1.5;
   padding: 20px;
   margin: 20px 40px;
   border: 2px solid #000;
@@ -24,6 +24,7 @@
 
 .task-card strong {
   color: #9c34c2;
+  line-height: 2;
 }
 
 .task-card span {
