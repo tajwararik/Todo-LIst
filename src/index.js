@@ -2,6 +2,7 @@ import { createProject } from "./pages/createProject.js";
 import { createTask } from "./pages/createTask.js";
 import { loadDomProjectHandle } from "./pages/domProjectHandle.js";
 import { loadDomTaskHandle } from "./pages/domTaskHandle.js";
+import { connectTasksToProject } from "./pages/connectTasksToProjects.js";
 import "./styles.css";
 
 const projectContainer = document.querySelector(".project-container");
@@ -38,6 +39,7 @@ viewProjects.addEventListener("click", () => {
 });
 
 addTask.addEventListener("click", () => {
+  connectTasksToProject();
   taskDialog.showModal();
 });
 
