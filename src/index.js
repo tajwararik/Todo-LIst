@@ -19,6 +19,10 @@ const taskDialog = taskContainer.querySelector("dialog");
 const cancelTaskButton = taskDialog.querySelector(".cancel");
 const addTaskButton = taskDialog.querySelector(".add");
 
+document.addEventListener("DOMContentLoaded", () => {
+  loadDomProjectHandle();
+});
+
 addProject.addEventListener("click", () => {
   projectDialog.showModal();
 });
