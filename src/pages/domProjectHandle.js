@@ -1,4 +1,5 @@
 import { projectArray } from "./createProject";
+import { handleTasksInProjects } from "./tasksInProjects";
 import "./projectCards.css";
 
 export const loadDomProjectHandle = function () {
@@ -11,6 +12,10 @@ export const loadDomProjectHandle = function () {
 
     projectCard.innerHTML = `<h2>&vrtri; ${project.name}</h2>
     <p>Created: ${project.date}</p>`;
+
+    projectCard.addEventListener("click", () => {
+      handleTasksInProjects(project.name);
+    });
 
     display.append(projectCard);
   }
