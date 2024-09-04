@@ -88,6 +88,7 @@ export function createTask() {
     taskPriority !== ""
   ) {
     taskArray.push(newTask);
+    localStorage.setItem("tasks", JSON.stringify(taskArray));
     taskDialog.close();
   }
 
