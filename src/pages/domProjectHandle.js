@@ -3,7 +3,16 @@ import { handleTasksInProjects } from "./tasksInProjects";
 import "./projectCards.css";
 
 export const loadDomProjectHandle = function () {
-  const display = document.querySelector(".display-container > div:last-of-type");
+  const storedProjects = JSON.parse(localStorage.getItem("projects"));
+
+  if (storedProjects) {
+    projectArray.length = 0;
+    projectArray.push(...storedProjects);
+  }
+
+  const display = document.querySelector(
+    ".display-container > div:last-of-type"
+  );
   display.innerHTML = "";
 
   for (let project of projectArray) {
