@@ -2,6 +2,13 @@ import { taskArray } from "./createTask";
 import "./taskCards.css";
 
 export const loadDomTaskHandle = function () {
+  const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+
+  if (storedTasks) {
+    taskArray.length = 0;
+    taskArray.push(...storedTasks);
+  }
+
   const display = document.querySelector(
     ".display-container > div:last-of-type"
   );
