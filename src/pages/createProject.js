@@ -27,6 +27,7 @@ export function createProject() {
 
   if (projectName !== "") {
     projectArray.push(newProject);
+    localStorage.setItem("projects", JSON.stringify(projectArray));
     projectDialog.close();
   }
 
