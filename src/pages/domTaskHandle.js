@@ -27,6 +27,17 @@ export const loadDomTaskHandle = function () {
     <p><Strong>Project:</strong> <span>${task.project}</span></p>
     <p><strong>Priority:</strong> <span>${task.priority}</span></p>`;
 
+    const completeButton = document.createElement("button");
+    completeButton.classList.add("complete-button");
+    completeButton.textContent = "Complete";
+
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-button");
+    deleteButton.setAttribute("data-title", task.title);
+    deleteButton.textContent = "Delete";
+
+    taskCard.append(completeButton);
+    taskCard.append(deleteButton);
     taskCardsHolder.append(taskCard);
     display.append(taskCardsHolder);
   }
