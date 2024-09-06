@@ -16,7 +16,20 @@ export function loadTasksInProject(tasks) {
         <p><Strong>Project:</strong> <span>${task.project}</span></p>
         <p><strong>Priority:</strong> <span>${task.priority}</span></p>`;
 
+    const completeButton = document.createElement("button");
+    completeButton.classList.add("complete-button");
+    completeButton.textContent = "Complete";
+
+    taskCard.append(completeButton);
     taskCardsHolder.append(taskCard);
     display.append(taskCardsHolder);
   }
+
+  const getCompleteButtons = display.querySelectorAll(".complete-button");
+  getCompleteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const taskCard = button.closest(".task-card");
+      taskCard.querySelector("h3").classList.add("line-through");
+    });
+  });
 }
