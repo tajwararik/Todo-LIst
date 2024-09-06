@@ -1,7 +1,7 @@
 .task-cards-holder {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .task-card {
@@ -21,6 +21,10 @@
 .task-card h3 {
   font-size: 1.5rem;
   text-align: center;
+}
+
+.line-through {
+  text-decoration: line-through;
 }
 
 .task-card strong {
