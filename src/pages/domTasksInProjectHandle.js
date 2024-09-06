@@ -1,3 +1,5 @@
+import { taskArray } from "./createTask";
+
 const display = document.querySelector(".display-container > div:last-of-type");
 
 export function loadTasksInProject(tasks) {
@@ -20,7 +22,13 @@ export function loadTasksInProject(tasks) {
     completeButton.classList.add("complete-button");
     completeButton.textContent = "Complete";
 
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-button");
+    deleteButton.setAttribute("data-title", task.title);
+    deleteButton.textContent = "Delete";
+
     taskCard.append(completeButton);
+    taskCard.append(deleteButton);
     taskCardsHolder.append(taskCard);
     display.append(taskCardsHolder);
   }
@@ -32,4 +40,20 @@ export function loadTasksInProject(tasks) {
       taskCard.querySelector("h3").classList.add("line-through");
     });
   });
+
+  const getDeleteButtons = display.querySelectorAll(".delete-button");
+  getDeleteButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      deleteTask(button.getAttribute("data-title"), tasks);
+    });
+  });
+}
+
+function deleteTask(title, tasks) {
+  const index = taskArray.findIndex((task) => task.title === title);
+  taskArray.splice(index, 1);
+  tasks.splice(index, 1);
+  localStorage.removeItem("tasks");
+  localStorage.setItem("tasks", JSON.stringify(taskArray));
+  loadTasksInProject(tasks);
 }
