@@ -49,4 +49,19 @@ export const loadDomTaskHandle = function () {
       taskCard.querySelector("h3").classList.add("line-through");
     });
   });
+
+  const getDeleteButtons = display.querySelectorAll(".delete-button");
+  getDeleteButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      deleteTask(button.getAttribute("data-title"));
+    });
+  });
 };
+
+function deleteTask(title) {
+  const index = taskArray.findIndex((task) => task.title === title);
+  taskArray.splice(index, 1);
+  localStorage.removeItem("tasks");
+  localStorage.setItem("tasks", JSON.stringify(taskArray));
+  loadDomTaskHandle();
+}
