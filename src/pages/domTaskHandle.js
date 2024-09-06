@@ -41,4 +41,12 @@ export const loadDomTaskHandle = function () {
     taskCardsHolder.append(taskCard);
     display.append(taskCardsHolder);
   }
+
+  const getCompleteButtons = display.querySelectorAll(".complete-button");
+  getCompleteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const taskCard = button.closest(".task-card");
+      taskCard.querySelector("h3").classList.add("line-through");
+    });
+  });
 };
