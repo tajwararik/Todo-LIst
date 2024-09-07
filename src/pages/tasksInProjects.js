@@ -14,6 +14,6 @@ function searchProject(projectName) {
   }
 
   loadTasksInProject(
-    taskArray.filter((projects) => projects.project.includes(projectName))
+    taskArray.filter((projects) => projects.project ===  projectName)
   );
 }
