@@ -5,6 +5,16 @@ const display = document.querySelector(".display-container > div:last-of-type");
 export function loadTasksInProject(tasks) {
   display.innerHTML = "";
 
+  if (tasks.length === 0) {
+    const message = document.createElement("p");
+    message.classList.add("message");
+    message.textContent =
+      "No tasks found in this project. Start by adding your first task!";
+
+    display.append(message);
+    return;
+  }
+
   const taskCardsHolder = document.createElement("div");
   taskCardsHolder.classList.add("task-cards-holder");
 
