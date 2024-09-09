@@ -12,6 +12,7 @@ export function loadTasksInProject(tasks) {
       "No tasks found in this project. Start by adding your first task!";
 
     display.append(message);
+
     return;
   }
 
@@ -62,7 +63,9 @@ export function loadTasksInProject(tasks) {
 function deleteTask(title, tasks) {
   const index = taskArray.findIndex((task) => task.title === title);
   taskArray.splice(index, 1);
-  tasks.splice(index, 1);
+
+  tasks = tasks.filter(task => task.title !== title);
+  
   localStorage.removeItem("tasks");
   localStorage.setItem("tasks", JSON.stringify(taskArray));
   loadTasksInProject(tasks);
