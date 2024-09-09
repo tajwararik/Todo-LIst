@@ -2,17 +2,28 @@ import { taskArray } from "./createTask";
 import "./taskCards.css";
 
 export const loadDomTaskHandle = function () {
-  const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-
-  if (storedTasks) {
-    taskArray.length = 0;
-    taskArray.push(...storedTasks);
-  }
-
   const display = document.querySelector(
     ".display-container > div:last-of-type"
   );
   display.innerHTML = "";
+
+  const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+
+  if (storedTasks) {
+    if (storedTasks.length === 0) {
+      const message = document.createElement("p");
+      message.classList.add("message");
+      message.textContent =
+        "No tasks found in tasks list. Start by adding your first task!";
+
+      display.append(message);
+
+      return;
+    } else {
+      taskArray.length = 0;
+      taskArray.push(...storedTasks);
+    }
+  }
 
   const taskCardsHolder = document.createElement("div");
   taskCardsHolder.classList.add("task-cards-holder");
