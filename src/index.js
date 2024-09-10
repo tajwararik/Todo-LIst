@@ -55,7 +55,6 @@ cancelTaskButton.addEventListener("click", (e) => {
 addTaskButton.addEventListener("click", (e) => {
   e.preventDefault();
   createTask();
-  loadDomTaskHandle();
 });
 
 viewTasks.addEventListener("click", () => {
