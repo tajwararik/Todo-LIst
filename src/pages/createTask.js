@@ -1,6 +1,5 @@
 import { format } from "date-fns";
 import { dropDown } from "./connectTasksToProjects";
-import { loadDomProjectHandle } from "./domProjectHandle";
 import { loadDomTaskHandle } from "./domTaskHandle";
 
 const taskContainer = document.querySelector(".task-container");
@@ -94,6 +93,7 @@ export function createTask() {
     taskArray.push(newTask);
     localStorage.setItem("tasks", JSON.stringify(taskArray));
     taskDialog.close();
+    loadDomTaskHandle();
   }
 
   form.reset();
