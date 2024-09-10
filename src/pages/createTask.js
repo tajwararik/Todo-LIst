@@ -1,5 +1,7 @@
 import { format } from "date-fns";
 import { dropDown } from "./connectTasksToProjects";
+import { loadDomProjectHandle } from "./domProjectHandle";
+import { loadDomTaskHandle } from "./domTaskHandle";
 
 const taskContainer = document.querySelector(".task-container");
 const taskDialog = taskContainer.querySelector("dialog");
@@ -61,16 +63,18 @@ class Task {
 export function createTask() {
   const taskTitle = form.querySelector("#title").value;
   const taskDescription = form.querySelector("#description").value;
-  const taskDueDate = format(
-    form.querySelector("#due-date").value,
-    "dd MMM yyyy"
-  );
+  const taskDueDateValue = form.querySelector("#due-date").value;
   const project = dropDown.value;
   let taskPriority = "";
 
   form.querySelectorAll("div input[type='radio']").forEach((radio) => {
     if (radio.checked) taskPriority = radio.value;
   });
+
+  let taskDueDate = "";
+  if (taskDueDateValue) {
+    taskDueDate = format(new Date(taskDueDateValue), "dd MMM yyy");
+  }
 
   const newTask = new Task(
     taskTitle,
@@ -83,7 +87,7 @@ export function createTask() {
   if (
     taskTitle !== "" &&
     taskDescription !== "" &&
-    taskDueDate !== "" &&
+    taskDueDateValue !== "" &&
     project !== "Project" &&
     taskPriority !== ""
   ) {
