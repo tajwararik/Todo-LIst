@@ -35,7 +35,6 @@ cancelProjectButton.addEventListener("click", (e) => {
 addProjectButton.addEventListener("click", (e) => {
   e.preventDefault();
   createProject();
-  loadDomProjectHandle();
 });
 
 viewProjects.addEventListener("click", () => {
