@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { loadDomProjectHandle } from "./domProjectHandle";
 
 const projectContainer = document.querySelector(".project-container");
 const projectDialog = projectContainer.querySelector("dialog");
@@ -29,6 +30,7 @@ export function createProject() {
     projectArray.push(newProject);
     localStorage.setItem("projects", JSON.stringify(projectArray));
     projectDialog.close();
+    loadDomProjectHandle();
   }
 
   form.reset();
