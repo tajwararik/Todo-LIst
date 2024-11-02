@@ -1,4 +1,4 @@
-# Restaurant Page
+# TODO List
 
 This is a project from the The Odin Project.
 
